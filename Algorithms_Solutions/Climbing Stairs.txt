@@ -1,0 +1,18 @@
+https://leetcode.com/problems/climbing-stairs/description/
+--------------------------------------------------->
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n == 1) return 1;
+        if(n== 2) return 2;
+        int f = 1; 
+        int s = 2;
+        int th;
+        for(int i=3;i<=n;i++){
+            th = f + s;
+            f = s;
+            s = th;
+        }
+        return s;
+    }
+};
