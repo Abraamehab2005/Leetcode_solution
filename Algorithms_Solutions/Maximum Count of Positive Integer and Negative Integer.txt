@@ -1,0 +1,16 @@
+https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/description/
+---------------------------------------------------------------------------------------->
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int pos=0 , nag=0;
+        for(int x : nums){
+            if(x > 0){
+                pos++;
+            }else if(x < 0){
+                nag++; 
+            }
+        }
+        return max(pos,nag);
+    }
+};
