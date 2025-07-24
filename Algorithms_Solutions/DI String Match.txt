@@ -1,0 +1,19 @@
+https://leetcode.com/problems/di-string-match/description/?envType=problem-list-v2&envId=greedy
+--------------------------------------------------------------------------------->
+class Solution {
+public:
+    vector<int> diStringMatch(string s) {
+        int n = s.length();
+        int low = 0, high = n;
+        vector<int> V;
+        for(char c : s) {
+            if(c == 'I') {
+                V.push_back(low++);
+            } else { 
+                V.push_back(high--);
+            }
+        }
+        V.push_back(low);
+        return V;
+    }
+};
