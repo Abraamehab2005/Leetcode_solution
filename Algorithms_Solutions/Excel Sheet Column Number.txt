@@ -1,0 +1,13 @@
+https://leetcode.com/problems/excel-sheet-column-number/description/?envType=problem-list-v2&envId=math
+-------------------------------------------------------------------------------------->
+class Solution {
+public:
+    int titleToNumber(string columnTitle) {
+        int sum =0;
+        for(char c :columnTitle){
+            int result = c - 'A' +1;
+            sum = sum * 26 + result;
+        }
+        return sum;
+    }
+};
