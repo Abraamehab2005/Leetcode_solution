@@ -1,0 +1,16 @@
+https://leetcode.com/problems/construct-the-rectangle/description/?envType=problem-list-v2&envId=math
+-------------------------------------------------------------------------------->
+class Solution {
+public:
+    vector<int> constructRectangle(int area) {
+        int len , wid;
+        for(int w = sqrt(area);w>=1;w--){
+            if(area % w == 0){
+                wid = w;
+                len = area / w;
+                break;
+            }
+        }
+        return {len,wid};
+    }
+};
