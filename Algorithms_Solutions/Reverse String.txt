@@ -1,0 +1,14 @@
+https://leetcode.com/problems/reverse-string/description/
+-------------------------------------------->>>
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int l=0;//first
+        int r = s.size()-1;//end of char
+        while(l<=r){
+            swap(s[r] , s[l]);
+            l++;
+            r--;
+        }
+    }
+};
