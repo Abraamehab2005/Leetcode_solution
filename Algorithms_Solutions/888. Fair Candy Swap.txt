@@ -1,0 +1,20 @@
+https://leetcode.com/problems/fair-candy-swap/description/?envType=problem-list-v2&envId=binary-search
+-------------------------------------------------------------------------------------->
+class Solution {
+public:
+    vector<int> fairCandySwap(vector<int>& aliceSizes, vector<int>& bobSizes) {
+      int sumA=0; int sumB=0;
+      for(int x : aliceSizes) sumA+=x;
+      for(int y : bobSizes) sumB += y;
+      int res = (sumA-sumB) / 2;
+       unordered_set<int> setA(aliceSizes.begin(), aliceSizes.end());
+       for (int y : bobSizes) {
+            int x = y + res;
+            if (setA.count(x)) {
+                return {x, y};
+            }
+        }
+        return {}; 
+}
+    
+};
