@@ -1,0 +1,12 @@
+https://leetcode.com/problems/palindrome-number/description/?envType=problem-list-v2&envId=math
+-------------------------------------------------------------------------------->
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x < 0) return false;
+        string s =to_string(x);
+        string v = s;
+        reverse(v.begin(),v.end());
+        return s == v;
+    }
+};
