@@ -1,0 +1,14 @@
+https://leetcode.com/problems/valid-anagram/description/?envType=problem-list-v2&envId=sorting
+--------------------------------------------------------------------------->
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+         sort(s.begin(),s.end()); // anagaram
+         sort(t.begin(),t.end()); // nagaram
+         if(s == t){
+            return true;
+         }else{
+            return false;
+         }
+    }
+};
