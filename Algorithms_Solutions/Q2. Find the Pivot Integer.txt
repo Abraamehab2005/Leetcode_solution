@@ -1,0 +1,14 @@
+https://leetcode.com/problems/find-the-pivot-integer/description/?envType=problem-list-v2&envId=maths-m1-arithmetic-basic-reasoning
+--------------------------------------------------------------------------------------------------------->
+class Solution {
+public:
+    int pivotInteger(int n) { // 8
+        int xx = n * (n + 1) / 2; // 72 / 2 
+        int x = sqrt(xx); // 6
+        if(x * x == xx ){  // 36 = 36
+            return x;
+        }else{
+            return -1;
+        }
+    }
+};
