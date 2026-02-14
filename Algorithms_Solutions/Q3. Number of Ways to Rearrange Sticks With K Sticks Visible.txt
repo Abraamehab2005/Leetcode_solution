@@ -1,0 +1,17 @@
+https://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/description/?envType=problem-list-v2&envId=maths-m3-combinatorics-permutations
+------------------------------------------------------------------------------->
+class Solution {
+public:
+int mod = 1e9 + 7;
+    int rearrangeSticks(int n, int k) {
+        vector<vector<long long>>dp(n + 1 , vector<long long>(k+1 , 0));
+        dp[1][1] = 1;
+        for(int i = 2 ; i<= n; i++){
+            for(int j = 1 ; j<= min(n,k); j++){
+                dp[i][j] = dp[i-1][j-1] % mod;
+                dp[i][j] = (dp[i][j] + dp[i-1][j] * (i - 1) % mod) % mod;
+            }
+        }
+        return dp[n][k];  
+    }
+};
