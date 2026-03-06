@@ -1,0 +1,13 @@
+https://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/description/?envType=daily-question&envId=2026-03-06
+------------------------------------------------------------------------------------------------------------------------>
+class Solution {
+public:
+    bool checkOnesSegment(string s) {
+        for(int i=0;i<s.size();i++){
+            if(s[i] == '0' && s[i+1] == '1'){
+                return false;
+            }
+        }
+        return true;
+    }
+};
