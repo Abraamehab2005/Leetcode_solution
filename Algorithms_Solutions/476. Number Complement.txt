@@ -1,0 +1,27 @@
+https://leetcode.com/problems/number-complement/description/
+----------------------------------------------->
+class Solution {
+public:
+    int findComplement(int num) {
+        if(num == '0') return 1;
+        string binary = "";
+        while(num > 0){
+            int bit = num % 2;
+            binary.push_back('0'+bit);
+            num/=2;
+        }
+        reverse(binary.begin(), binary.end());
+        for(int i=0;i<binary.size();i++){
+            if(binary[i] == '0'){
+                binary[i] = '1';
+            }else{
+                binary[i] = '0';
+            }
+        }
+        int sum = 0;
+        for(char c : binary){
+            sum = sum * 2  + (c - '0');
+        }
+        return sum;
+    }
+};
