@@ -1,0 +1,50 @@
+https://leetcode.com/problems/equal-sum-grid-partition-i/description/?envType=daily-question&envId=2026-03-25
+------------------------------------------------------------------------------------------>
+class Solution {
+public:
+    bool canPartitionGrid(vector<vector<int>>& grid) {
+        
+        int n = grid.size();
+        int m = grid[0].size();
+        int sum = 0;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                sum += grid[i][j];
+            }
+        }
+        if(sum % 2 != 0) return false;
+        
+        int target = sum / 2;
+        int sumoff = 0;
+        
+        for(int i = 0; i < n - 1; i++){
+            
+            int row_sum = 0;
+            
+            for(int j = 0; j < m; j++){
+                row_sum += grid[i][j];
+            }
+            
+            sumoff += row_sum;
+            
+            if(sumoff == target)
+                return true;
+        }
+        sumoff = 0;
+        
+        for(int j = 0; j < m - 1; j++){
+            
+            int col_sum = 0;
+            
+            for(int i = 0; i < n; i++){
+                col_sum += grid[i][j];
+            }
+            
+            sumoff += col_sum;
+            
+            if(sumoff == target)
+                return true;
+        }
+        return false;
+    }
+};
