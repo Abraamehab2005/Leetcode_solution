@@ -1,0 +1,18 @@
+1class Solution {
+2public:
+3    vector<int> limitOccurrences(vector<int>& nums, int k) {
+4        int n = nums.size();
+5        if (n <= k) {
+6            return nums; 
+7        }
+8        int w = k; 
+9        for (int i = k; i < n; i++) {
+10            if (nums[i] != nums[w - k]) {
+11                nums[w] = nums[i];
+12                w++; 
+13            }
+14        }
+15        nums.resize(w);
+16        return nums;
+17    }
+18};
