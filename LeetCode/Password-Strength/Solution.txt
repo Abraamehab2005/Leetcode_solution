@@ -1,0 +1,19 @@
+1class Solution {
+2public:
+3    int passwordStrength(string password) {
+4        std::unordered_set<char> distinct_chars(password.begin(), password.end());
+5        int sum=0;
+6        for(char ch : distinct_chars){
+7            if(ch >= 'a' && ch <= 'z'){
+8                sum+=1;
+9                }else if(ch >= 'A' && ch <= 'Z'){
+10                sum+=2;
+11            }else if(ch >= '0' && ch <= '9'){
+12                sum+=3;
+13            }else if(ch == '!' || ch == '@' || ch == '#' || ch == '$'){
+14                sum+=5;
+15            }
+16        }
+17        return sum;
+18    }
+19};
