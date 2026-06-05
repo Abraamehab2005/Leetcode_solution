@@ -1,0 +1,17 @@
+1class Solution {
+2public:
+3    int minimumCost(vector<int>& cost) {
+4       sort(cost.begin(), cost.end(), greater<int>());
+5        if(cost.size() == 1){
+6            return cost[0];
+7        }if(cost.size() == 2){
+8            return cost[0] + cost[1];
+9        }
+10        int sum = 0;    
+11        for(int i=0;i<cost.size();i++){
+12            if(i % 3 == 2) continue;
+13            sum += cost[i];
+14        }   
+15        return sum;
+16    }
+17};
